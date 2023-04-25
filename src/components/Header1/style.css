@@ -1,0 +1,23 @@
+.header .link{
+    text-decoration: none;
+
+}
+.header{
+        max-width: 2320px;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        background-color : #a1a7a2;;
+        color : #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding : 0 30px;
+        z-index: 1000;
+        
+    
+}
+.header .link:hover{
+    text-decoration: underline;
+    color: red;
+  }
