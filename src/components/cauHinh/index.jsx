@@ -38,6 +38,7 @@ function CauHinh({cauhinh}) {
   }
   const handerShowCorrec=()=>{
     setShowCorrec(true)
+    console.log(`http://localhost:8080/cauhinhdiems/${idcauhinh}`);
   }
   const handerClose=()=>{
     setShowAdd(false)
@@ -65,7 +66,7 @@ function CauHinh({cauhinh}) {
       toast.success("sửa thành công")
       setShowCorrec(false)
       console.log(response.data);
-      console.log("2");
+
       axios.get(`http://localhost:8080/cauhinhdiems/${lophpbyid}`)
       .then(respones=>{
         console.log(respones.data)
@@ -82,13 +83,13 @@ function CauHinh({cauhinh}) {
   const handeradd=(data)=>{
     if(parseInt(data.diemcc)+parseInt(data.diembt)+parseInt(data.diemkt)+parseInt(data.diemth)+parseInt(data.diemck)!==100) return toast.error("Tổng số điểm không đủ 100")
     const cauhinhadd={
-      cauHinh:{
-      diembt:data.diembt,
-      diemcc:data.diemcc,
-      diemck:data.diemck,
-      diemkt:data.diemkt,
-      diemth:data.diemth
-      }
+   cauHinh:{
+    diembt:data.diembt,
+    diemcc:data.diemcc,
+    diemck:data.diemck,
+    diemkt:data.diemkt,
+    diemth:data.diemth
+   }
   }
   axios.post(`http://localhost:8080/cauhinhdiems/add?idMonHoc=${lophpbyid}`,JSON.stringify(cauhinhadd),{headers: {
     "Content-Type": "application/json",
@@ -98,9 +99,10 @@ function CauHinh({cauhinh}) {
   }}).then(response=>{
     axios.get(`http://localhost:8080/cauhinhdiems/${lophpbyid}`)
     .then(respones=>{
-      console.log("1");
-      console.log(respones.data)
+
       setCauhinhthangdiem(respones.data)
+      setidcauhinh(respones.data[0].id)
+     
       setShowAdd(false)
       toast.success("Thêm cấu hình thành công")
       localStorage.setItem('cauhinhthangdiem',JSON.stringify(respones.data))
@@ -116,7 +118,7 @@ function CauHinh({cauhinh}) {
     setidcauhinh(!JSON.parse(localStorage.getItem("cauhinhthangdiem"))[0]?(null):(JSON.parse(localStorage.getItem("cauhinhthangdiem"))[0].id))
     axios.get(`http://localhost:8080/cauhinhdiems/1`)
     .then(respones=>{
-      console.log("3");
+
       console.log(respones.data)
       setCauhinhthangdiem(respones.data)
       localStorage.setItem('cauhinhthangdiem',JSON.stringify(respones.data))
