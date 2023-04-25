@@ -71,8 +71,8 @@ function XemDiem({diembylophp}) {
           <tbody>
             {!diemlophp||diemlophp===null?(<div></div>):(diemlophp.map((el,index) => (
               <tr key={index}>
-                <td style={{textAlign:"center"}}>{el.tenSinhVien}</td>
-                <td style={{textAlign:"center"}}>{el.maSv}</td>
+                <td >{el.tenSinhVien}</td>
+                <td >{el.maSv}</td>
                 <td style={{textAlign:"right"}}>{parseFloat(el.diemcc).toFixed(1)}</td>
                 <td style={{textAlign:"right"}}>{parseFloat(el.diembt).toFixed(1)}</td>
                 <td style={{textAlign:"right"}}>{parseFloat(el.diemkt).toFixed(1)}</td>

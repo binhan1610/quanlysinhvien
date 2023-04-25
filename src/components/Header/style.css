@@ -1,13 +1,15 @@
 .header .link{
     text-decoration: none;
-
+    color: rgb(8, 0, 0);
+    font-weight: bold;
+    
 }
 .header{
     
         height: 50px;
         width: 100%;
         position: fixed;
-        background-color : #a1a7a2;;
+        background-color : #b2b4b3;;
         color : #fff;
         display: flex;
         justify-content: space-between;
