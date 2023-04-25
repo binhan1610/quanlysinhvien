@@ -187,6 +187,7 @@ function CauHinh({cauhinh}) {
               {...register("diemcc",{
                 required:true,
                 validate: (value) => {
+                  
                   const allowedValues = [0,10, 20, 30, 40, 50, 60, 70, 80, 90];
                   return allowedValues.includes(parseInt(value))
                     ? true
@@ -212,7 +213,7 @@ function CauHinh({cauhinh}) {
               
               name="diembt"
               {...register("diembt",{
-                required:true,
+                required:false,
                 validate: (value) => {
                   const allowedValues = [0,10, 20, 30, 40, 50, 60, 70, 80, 90];
                   return allowedValues.includes(parseInt(value))
@@ -222,11 +223,11 @@ function CauHinh({cauhinh}) {
               })} 
               className={`form-control ${errors.diembt ? "is-invalid" : ""}`}
               />
-                 {errors.diembt && errors.diembt.type === "required" && (
+                 {/* {errors.diembt && errors.diembt.type === "required" && (
                 <div className="invalid-feedback">
                   Không được để trống điểm bài tập
                 </div>
-              )}
+              )} */}
                                {errors.diembt && errors.diembt.type === "validate" && (
                 <div className="invalid-feedback">
                   Giá trị không hợp lệ
@@ -239,7 +240,7 @@ function CauHinh({cauhinh}) {
               
               name="diemkt"
               {...register("diemkt",{
-                required:true,
+                required:false,
                 validate: (value) => {
                   const allowedValues = [0,10, 20, 30, 40, 50, 60, 70, 80, 90];
                   return allowedValues.includes(parseInt(value))
@@ -249,11 +250,11 @@ function CauHinh({cauhinh}) {
               })} 
               className={`form-control ${errors.diemkt ? "is-invalid" : ""}`}
               />
-                 {errors.diemkt && errors.diemkt.type === "required" && (
+                 {/* {errors.diemkt && errors.diemkt.type === "required" && (
                 <div className="invalid-feedback">
                   Không được để trống điểm kiểm tra
                 </div>
-              )}
+              )} */}
                                {errors.diemkt && errors.diemkt.type === "validate" && (
                 <div className="invalid-feedback">
                   Giá trị không hợp lệ
@@ -266,7 +267,7 @@ function CauHinh({cauhinh}) {
               
               name="diemth"
               {...register("diemth",{
-                required:true,
+                required:false,
                 validate: (value) => {
                   const allowedValues = [0,10, 20, 30, 40, 50, 60, 70, 80, 90];
                   return allowedValues.includes(parseInt(value))
@@ -276,11 +277,11 @@ function CauHinh({cauhinh}) {
               })} 
               className={`form-control ${errors.diemth ? "is-invalid" : ""}`}
               />
-                 {errors.diemth && errors.diemth.type === "required" && (
+                 {/* {errors.diemth && errors.diemth.type === "required" && (
                 <div className="invalid-feedback">
                   Không được để trống điểm thực hành
                 </div>
-              )}
+              )} */}
                                {errors.diemth && errors.diemth.type === "validate" && (
                 <div className="invalid-feedback">
                   Giá trị không hợp lệ
