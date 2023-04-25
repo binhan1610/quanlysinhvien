@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import './style.css'
 import { Button, Modal } from "react-bootstrap";
 import { Helmet } from "react-helmet";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 function CauHinh({cauhinh}) {
@@ -65,6 +65,7 @@ function CauHinh({cauhinh}) {
       toast.success("sửa thành công")
       setShowCorrec(false)
       console.log(response.data);
+      console.log("2");
       axios.get(`http://localhost:8080/cauhinhdiems/${lophpbyid}`)
       .then(respones=>{
         console.log(respones.data)
@@ -97,8 +98,10 @@ function CauHinh({cauhinh}) {
   }}).then(response=>{
     axios.get(`http://localhost:8080/cauhinhdiems/${lophpbyid}`)
     .then(respones=>{
+      console.log("1");
       console.log(respones.data)
       setCauhinhthangdiem(respones.data)
+      setShowAdd(false)
       toast.success("Thêm cấu hình thành công")
       localStorage.setItem('cauhinhthangdiem',JSON.stringify(respones.data))
     })
@@ -113,6 +116,7 @@ function CauHinh({cauhinh}) {
     setidcauhinh(!JSON.parse(localStorage.getItem("cauhinhthangdiem"))[0]?(null):(JSON.parse(localStorage.getItem("cauhinhthangdiem"))[0].id))
     axios.get(`http://localhost:8080/cauhinhdiems/1`)
     .then(respones=>{
+      console.log("3");
       console.log(respones.data)
       setCauhinhthangdiem(respones.data)
       localStorage.setItem('cauhinhthangdiem',JSON.stringify(respones.data))

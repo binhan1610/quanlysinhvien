@@ -645,14 +645,14 @@ function ManegementUser({listSV}) {
             <tbody>
               {!listStudent||listStudent===null?(<div></div>):(listStudent.filter((el)=>el.sinhviens.lopcq===classCQ)).map((el,index) => (
                 <tr key={index}>
-                  <td style={{ textAlign: "center" }}>{el.sinhviens.masv}</td>
-                  <td style={{ textAlign: "center" }}>{el.users.hoten}</td>
-                  <td style={{ textAlign: "center" }}>{el.sinhviens.khoa}</td>
-                  <td style={{ textAlign: "center" }}>{el.sinhviens.lopcq}</td>
-                  <td style={{ textAlign: "center" }}>{el.users.email}</td>
-                  <td style={{ textAlign: "center" }}>{el.users.sdt}</td>
-                  <td style={{ textAlign: "center" }}>{el.users.diachi}</td>
-                  <td style={{ textAlign: "center" }}>{el.users.ngaysinh}</td>
+                  <td >{el.sinhviens.masv}</td>
+                  <td >{el.users.hoten}</td>
+                  <td >{el.sinhviens.khoa}</td>
+                  <td >{el.sinhviens.lopcq}</td>
+                  <td >{el.users.email}</td>
+                  <td >{el.users.sdt}</td>
+                  <td >{el.users.diachi}</td>
+                  <td >{el.users.ngaysinh}</td>
                   <td style={{ textAlign: "center" }}>
                     <Button
                       variant="primary"
