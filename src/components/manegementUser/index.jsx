@@ -688,7 +688,7 @@ function ManegementUser({ listSV }) {
       </Modal>
       {/* modal sửa */}
       <div>
-        {!listStudent || listStudent === null|| classCQ==="B19CQCN03" ? (
+        {!listStudent || listStudent === null ? (
           <h1>Không có sinh viên nào</h1>
         ) : (
           <table className="table">
